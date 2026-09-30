@@ -1,0 +1,252 @@
+/* Iinvitation reference landing page. Scoped separately so Backoffice and the live-invitation previews retain their styles. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+.marketing-site.ref-page{
+  --ref-dark:#25292e;
+  --ref-olive:#5e6551;
+  --ref-rust:#a26851;
+  --ref-border:#e9e1dc;
+  --ref-sans:'DM Sans',sans-serif;
+  --ref-serif:'Cormorant Garamond',Georgia,serif;
+  margin:0;background:#fff;color:var(--ref-dark);font:400 13px/1.45 var(--ref-sans);overflow-x:clip;
+}
+.marketing-site.ref-page :where(.ref-hero,.ref-features,.ref-catalog,.ref-pricing,.ref-cta,.ref-footer) :is(h1,h2,h3,p){margin:0}
+.marketing-site.ref-page button,.marketing-site.ref-page a{font-family:var(--ref-sans)}
+.marketing-site.ref-page button:focus-visible,.marketing-site.ref-page a:focus-visible,.marketing-site.ref-page input:focus-visible{outline:2px solid #ad8265;outline-offset:3px}
+.marketing-site.ref-page .ref-eyebrow{font-size:9px;letter-spacing:.29em;line-height:1.5;font-weight:700;color:#886758}
+
+/* Header */
+.marketing-site.ref-page .ref-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;height:72px;
+  padding:0 6.6%;display:grid;align-items:center;
+  grid-template-columns:minmax(195px,1fr) auto minmax(195px,1fr);gap:16px;
+  background:rgba(255,255,255,0);transition:background .2s,box-shadow .2s,height .2s;
+}
+.marketing-site.ref-page .ref-header.is-scrolled{height:65px;background:rgba(255,255,255,.97);box-shadow:0 5px 26px rgba(44,37,32,.055);backdrop-filter:blur(14px)}
+.marketing-site.ref-page .ref-logo{display:inline-flex;align-items:center;width:max-content;padding:0;line-height:0}
+.marketing-site.ref-page .ref-logo img{width:189px;height:48px;max-width:none;object-fit:contain;object-position:left center}
+.marketing-site.ref-page .ref-nav{display:flex;align-items:center;justify-content:center;gap:33px;white-space:nowrap}
+.marketing-site.ref-page .ref-nav>a{font-size:11px;color:#22272c;position:relative;line-height:2;transition:color .2s}
+.marketing-site.ref-page .ref-nav>a:hover{color:#9b6450}
+.marketing-site.ref-page .ref-nav>a.is-home:after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:#a18171}
+.marketing-site.ref-page .ref-header-actions{display:flex;justify-content:flex-end;align-items:center;gap:27px}
+.marketing-site.ref-page .ref-search-trigger,.marketing-site.ref-page .ref-menu-trigger{border:0;background:none;display:grid;place-items:center;padding:5px;color:#29313a;cursor:pointer}
+.marketing-site.ref-page .ref-order{width:173px;height:38px;border-radius:30px;background:var(--ref-olive);color:#fff;display:flex;align-items:center;justify-content:center;gap:15px;font-size:12px;white-space:nowrap;transition:background .2s,transform .2s}
+.marketing-site.ref-page .ref-order:hover,.marketing-site.ref-page .ref-pill-dark:hover{background:#4e5543;transform:translateY(-1px)}
+.marketing-site.ref-page .ref-menu-trigger,.marketing-site.ref-page .ref-nav-mobile-order{display:none}
+.marketing-site.ref-page .ref-search-panel{position:absolute;right:6.6%;top:calc(100% + 8px);width:min(405px,85vw);display:flex;align-items:center;gap:10px;padding:10px 12px 10px 16px;background:#fff;border:1px solid var(--ref-border);box-shadow:0 15px 40px rgba(25,28,30,.1);border-radius:15px;color:#85614e}
+.marketing-site.ref-page .ref-search-panel input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:var(--ref-dark);font-size:13px}
+.marketing-site.ref-page .ref-search-panel button{border:0;background:var(--ref-olive);color:#fff;border-radius:20px;padding:8px 13px;display:flex;gap:6px;align-items:center;cursor:pointer;font-size:12px}
+
+/* Hero: reference photo and editorial copy */
+.marketing-site.ref-page .ref-hero{position:relative;height:clamp(482px,42.8vw,610px);background:#fff;overflow:hidden;isolation:isolate}
+.marketing-site.ref-page .ref-hero-art{position:absolute;z-index:0;right:0;top:clamp(54px,4.81vw,75px);width:53.75%;max-width:none;height:auto;aspect-ratio:603/426;object-fit:fill}
+.marketing-site.ref-page .ref-hero-copy{position:absolute;z-index:1;top:clamp(100px,8.9vw,129px);left:6.8%;width:48%;pointer-events:none}
+.marketing-site.ref-page .ref-hero-copy a,.marketing-site.ref-page .ref-hero-copy button{pointer-events:auto}
+.marketing-site.ref-page .ref-hero h1{font:400 clamp(43px,4.93vw,70px)/.995 var(--ref-serif);letter-spacing:-.042em;color:#25292e;margin:11px 0 14px;white-space:nowrap}
+.marketing-site.ref-page .ref-hero h1 em{font-weight:400;color:#59614e}
+.marketing-site.ref-page .ref-hero-copy>p{font:400 clamp(12px,1.35vw,16px)/1.52 var(--ref-sans);color:#626872;max-width:435px}
+.marketing-site.ref-page .ref-hero-actions{display:flex;align-items:center;gap:12px;margin-top:21px}
+.marketing-site.ref-page .ref-pill{border-radius:50px;min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:17px;padding:0 24px;cursor:pointer;white-space:nowrap;font-size:12px;line-height:1;transition:transform .2s,background .2s,border-color .2s}
+.marketing-site.ref-page .ref-pill-dark{background:var(--ref-olive);color:#fff;border:1px solid var(--ref-olive)}
+.marketing-site.ref-page .ref-pill-outline{border:1px solid #cbb1a2;background:rgba(255,255,255,.93);color:#2c3034}
+.marketing-site.ref-page .ref-pill-outline:hover{border-color:#97745e;background:#fcf8f5;transform:translateY(-1px)}
+.marketing-site.ref-page .ref-hero-actions .ref-pill-dark{min-width:171px}
+.marketing-site.ref-page .ref-hero-actions .ref-pill-outline{gap:9px;padding:0 21px 0 0;min-width:162px}
+.marketing-site.ref-page .ref-play{width:42px;height:42px;border:1px solid #ddc9bb;border-radius:50%;display:grid;place-items:center;color:#25292e;margin-left:-1px}
+.marketing-site.ref-page .ref-social-proof{display:flex;align-items:center;gap:11px;margin-top:24px}
+.marketing-site.ref-page .ref-avatars{display:flex;align-items:center;padding-left:2px}
+.marketing-site.ref-page .ref-avatars img{width:36px;height:36px;object-fit:cover;object-position:center;border-radius:50%;border:2px solid #fff;margin-left:-5px;background:#dfdad3}
+.marketing-site.ref-page .ref-avatars img:first-child{margin-left:0}
+.marketing-site.ref-page .ref-proof-copy{display:grid;gap:2px;color:#626872;font-size:10px}
+.marketing-site.ref-page .ref-proof-copy>div{display:flex;align-items:center;gap:14px}
+.marketing-site.ref-page .ref-stars{color:#b2755d;letter-spacing:3px;font-size:16px;line-height:1}
+.marketing-site.ref-page .ref-proof-copy b{font-size:12px;color:#313940;font-weight:500}
+
+/* Why choose Iinvitation */
+.marketing-site.ref-page .ref-features{display:grid;grid-template-columns:180px minmax(0,1fr);gap:10px;align-items:center;padding:13px 5.55% 16px;min-height:170px;border-top:1px solid #faf9f7;background:#fff;scroll-margin-top:72px}
+.marketing-site.ref-page .ref-features-title h2{font:400 clamp(34px,3.4vw,48px)/1 var(--ref-serif);letter-spacing:-.035em;margin-top:6px}
+.marketing-site.ref-page .ref-features-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.marketing-site.ref-page .ref-feature-card{height:137px;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:12px 7px 8px;border:1px solid #f0eae7;border-radius:12px;background:#fff;box-shadow:0 7px 28px rgba(84,62,52,.035);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.marketing-site.ref-page .ref-feature-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(84,62,52,.095)}
+.marketing-site.ref-page .ref-feature-icon{width:46px;height:46px;border-radius:50%;background:#f9eeeb;color:#935b45;display:grid;place-items:center;margin-bottom:8px;flex:0 0 auto}
+.marketing-site.ref-page .ref-feature-card strong{font-size:12px;font-weight:500;line-height:1.3;color:#202329}
+.marketing-site.ref-page .ref-feature-card p{font-size:11.5px;line-height:1.42;color:#62666b;margin-top:5px;max-width:126px}
+
+/* Six reference cards; remainder of the live catalog stays available on demand. */
+.marketing-site.ref-page .ref-catalog{display:grid;grid-template-columns:180px minmax(0,1fr);gap:10px;padding:18px 5.55% 18px;min-height:263px;background:#fff;scroll-margin-top:74px}
+.marketing-site.ref-page .ref-catalog-heading{padding-top:2px}
+.marketing-site.ref-page .ref-catalog-heading h2{font:400 clamp(28px,3.05vw,43px)/.99 var(--ref-serif);letter-spacing:-.027em;margin-top:7px}
+.marketing-site.ref-page .ref-catalog-heading p{font-size:11.5px;line-height:1.55;color:#63666a;margin:13px 0 16px;max-width:168px}
+.marketing-site.ref-page .ref-see-all{min-height:35px;font-size:10px;padding:0 13px;gap:10px}
+.marketing-site.ref-page .ref-catalog-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;align-items:start}
+.marketing-site.ref-page .ref-template-card{min-width:0;text-align:center;padding:0 0 9px;border-radius:11px;box-shadow:0 6px 16px rgba(67,52,41,.025);border:1px solid #f6f1ec;background:#fff}
+.marketing-site.ref-page .ref-template-visual{display:block;width:100%;padding:0;aspect-ratio:122/168;overflow:hidden;border:0;border-radius:9px;background:#f6f1ee;cursor:pointer}
+.marketing-site.ref-page .ref-template-visual>img{height:100%;width:100%;object-fit:cover;transition:transform .3s}
+.marketing-site.ref-page .ref-template-visual:hover>img{transform:scale(1.055)}
+.marketing-site.ref-page .ref-template-visual .invite-mock{width:100%;height:100%;min-height:0;overflow:hidden}
+.marketing-site.ref-page .ref-template-card h3{font-size:11.5px;font-weight:500;line-height:1.3;margin:9px 0 5px;color:#282e33}
+.marketing-site.ref-page .ref-template-button{margin:auto;border:1px solid #e8d5c8;background:#fff;border-radius:24px;display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:0 11px;height:28px;font-size:10px;white-space:nowrap;cursor:pointer;box-shadow:0 4px 12px rgba(77,52,44,.04)}
+.marketing-site.ref-page .ref-template-button:hover{background:#f8f0eb}
+.marketing-site.ref-page .ref-no-results{grid-column:1/-1;margin:40px auto;color:#76716c}
+
+/* Pricing */
+.marketing-site.ref-page .ref-pricing{display:grid;grid-template-columns:minmax(165px,1.08fr) minmax(0,3fr) minmax(152px,.87fr);gap:16px;min-height:260px;padding:15px 5.55% 16px;background:#fff;scroll-margin-top:74px}
+.marketing-site.ref-page .ref-pricing-intro{padding-top:6px}
+.marketing-site.ref-page .ref-pricing-intro h2{font:400 clamp(25px,2.76vw,38px)/.98 var(--ref-serif);margin-top:7px;letter-spacing:-.032em}
+.marketing-site.ref-page .ref-pricing-intro>p{font-size:11px;line-height:1.6;color:#6c6e73;margin-top:15px;max-width:173px}
+.marketing-site.ref-page .ref-compare{display:flex;align-items:center;gap:7px;border-bottom:1px solid #ac8c7d;width:max-content;padding-bottom:4px;margin-top:19px;font-size:10px}
+.marketing-site.ref-page .ref-pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.marketing-site.ref-page .ref-pricing-card{min-width:0;min-height:230px;display:flex;flex-direction:column;border:1px solid #f1ebe7;border-radius:12px;box-shadow:0 5px 22px rgba(62,46,36,.04);padding:13px 18px 12px;background:#fff}
+.marketing-site.ref-page .ref-pricing-title{display:flex;align-items:center;justify-content:space-between;gap:3px}
+.marketing-site.ref-page .ref-pricing-title h3{font:400 24px/1 var(--ref-serif);letter-spacing:-.035em}
+.marketing-site.ref-page .ref-pricing-title>span{font-size:8px;letter-spacing:.09em;padding:5px 10px;border-radius:20px;background:#fae5d1;color:#966e50;font-weight:700}
+.marketing-site.ref-page .ref-pricing-subtitle{font-size:10px;color:#6b6f72;line-height:1.5;margin:4px 0 12px!important;white-space:nowrap}
+.marketing-site.ref-page .ref-pricing-card ul{list-style:none;padding:0;margin:0;display:grid;gap:5px}
+.marketing-site.ref-page .ref-pricing-card li{display:flex;align-items:flex-start;gap:7px;font-size:10px;line-height:1.25;color:#60656a}
+.marketing-site.ref-page .ref-pricing-card li svg{color:#293136;flex:0 0 14px}
+.marketing-site.ref-page .ref-pricing-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:6px;margin-top:auto;padding-top:12px}
+.marketing-site.ref-page .ref-pricing-bottom>div{display:flex;flex-direction:column;gap:0}
+.marketing-site.ref-page .ref-pricing-bottom small{font-size:10px;color:#8b8580}
+.marketing-site.ref-page .ref-pricing-bottom strong{font-size:16px;font-weight:500;letter-spacing:-.02em;white-space:nowrap}
+.marketing-site.ref-page .ref-pricing-bottom>a{display:grid;place-items:center;width:33px;height:33px;border-radius:50%;background:#faebe7;color:#9a6651;flex:0 0 auto;transition:transform .2s}
+.marketing-site.ref-page .ref-pricing-bottom>a:hover{transform:translateX(3px)}
+.marketing-site.ref-page .ref-addons{padding-top:5px}
+.marketing-site.ref-page .ref-addons .ref-eyebrow{font-size:8px;letter-spacing:.20em}
+.marketing-site.ref-page .ref-addons h2{font:400 22px/1 var(--ref-serif);letter-spacing:-.02em;margin-top:5px}
+.marketing-site.ref-page .ref-addons>p{font-size:10px;color:#767478;line-height:1.5;margin:7px 0 10px;max-width:180px}
+.marketing-site.ref-page .ref-addon-list{display:grid;gap:5px}
+.marketing-site.ref-page .ref-addon{display:flex;align-items:center;gap:7px;min-height:31px;background:#fff;border:1px solid #f2e8e2;border-radius:20px;padding:0 8px;white-space:nowrap;color:#33353a;box-shadow:0 4px 9px rgba(70,52,42,.025)}
+.marketing-site.ref-page .ref-addon svg{color:#a26952;flex:0 0 auto}
+.marketing-site.ref-page .ref-addon span{font-size:9px;min-width:0;flex:1}
+.marketing-site.ref-page .ref-addon small{font-size:8.5px;color:#545963}
+.marketing-site.ref-page .ref-addon:hover{background:#fff7f2}
+
+/* Closing invitation */
+.marketing-site.ref-page .ref-cta{position:relative;min-height:152px;margin:0 3.9%;border-radius:18px;overflow:hidden;background:linear-gradient(90deg,#d7cdc5 0%,#f9f5f1 47%,#f7f1ed 73%,#e3d0c3 100%)}
+.marketing-site.ref-page .ref-cta:before,.marketing-site.ref-page .ref-cta:after{content:"";position:absolute;inset-block:0;background-repeat:no-repeat;pointer-events:none}
+.marketing-site.ref-page .ref-cta:before{width:43%;left:0;background-image:url('/marketing/cta-left.webp');background-size:cover;background-position:left center}
+.marketing-site.ref-page .ref-cta:after{width:25%;right:0;background-image:url('/marketing/cta-right.webp');background-size:cover;background-position:right center}
+.marketing-site.ref-page .ref-cta-content{position:relative;z-index:1;margin-left:47%;width:33%;padding:13px 0 10px}
+.marketing-site.ref-page .ref-cta-content h2{font:400 clamp(24px,2.65vw,37px)/.93 var(--ref-serif);letter-spacing:-.04em}
+.marketing-site.ref-page .ref-cta-content p{font-size:11px;line-height:1.35;color:#64666b;margin:7px 0 8px}
+.marketing-site.ref-page .ref-cta-content>a{border-radius:30px;background:var(--ref-olive);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:29px;padding:0 19px;font-size:10px}
+.marketing-site.ref-page .ref-cta-content>a:hover{background:#444b3e}
+
+/* Footer */
+.marketing-site.ref-page .ref-footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;min-height:66px;padding:7px 4.7% 5px;background:#fff}
+.marketing-site.ref-page .ref-footer-logo{display:flex;flex-direction:column;align-items:flex-start;gap:0;width:max-content}
+.marketing-site.ref-page .ref-footer-logo img{width:127px;height:31px;object-fit:contain;object-position:left center}
+.marketing-site.ref-page .ref-footer-logo span{font-size:8px;color:#696970;margin:-2px 0 0 39px}
+.marketing-site.ref-page .ref-footer nav{display:flex;align-items:center;gap:31px}
+.marketing-site.ref-page .ref-footer nav a{font-size:10px;color:#30343a}
+.marketing-site.ref-page .ref-footer nav a:hover{color:#a26851}
+.marketing-site.ref-page .ref-footer-end{display:flex;align-items:center;justify-content:flex-end;gap:21px}
+.marketing-site.ref-page .ref-socials{display:flex;align-items:center;gap:14px}
+.marketing-site.ref-page .ref-socials a{display:inline-grid;place-items:center;width:17px;height:20px}
+.marketing-site.ref-page .ref-tiktok{font-size:23px;font-weight:700;line-height:1}
+.marketing-site.ref-page .ref-copyright{padding-left:19px;border-left:1px solid #d4c1b6;white-space:nowrap;font-size:9px;color:#545961}
+
+/* Small laptops / tablets */
+@media(max-width:1100px){
+ .marketing-site.ref-page .ref-header{padding-inline:5.1%;grid-template-columns:minmax(150px,1fr) auto minmax(160px,1fr);gap:8px}
+ .marketing-site.ref-page .ref-logo img{width:162px;height:auto}
+ .marketing-site.ref-page .ref-nav{gap:20px}
+ .marketing-site.ref-page .ref-header-actions{gap:13px}
+ .marketing-site.ref-page .ref-order{width:150px}
+ .marketing-site.ref-page .ref-hero-copy{left:5.3%}
+ .marketing-site.ref-page .ref-hero h1{font-size:clamp(43px,4.93vw,55px)}
+ .marketing-site.ref-page .ref-features,.marketing-site.ref-page .ref-catalog{grid-template-columns:174px minmax(0,1fr);padding-inline:4.6%}
+ .marketing-site.ref-page .ref-pricing{gap:10px;padding-inline:4.6%;grid-template-columns: minmax(156px,1fr) minmax(0,3fr) minmax(150px,.9fr)}
+ .marketing-site.ref-page .ref-pricing-card{padding-inline:10px}
+ .marketing-site.ref-page .ref-feature-card{padding-inline:3px}
+ .marketing-site.ref-page .ref-catalog-grid{gap:7px}
+ .marketing-site.ref-page .ref-template-button{font-size:9px;padding-inline:6px;gap:5px}
+ .marketing-site.ref-page .ref-footer{gap:12px}
+ .marketing-site.ref-page .ref-footer nav{gap:15px}
+ .marketing-site.ref-page .ref-footer-end{gap:8px}
+ .marketing-site.ref-page .ref-copyright{padding-left:9px;font-size:8px}
+}
+@media(max-width:860px){
+ .marketing-site.ref-page .ref-header{height:68px;grid-template-columns:1fr auto;padding-inline:5%}
+ .marketing-site.ref-page .ref-header-actions{grid-column:2}
+ .marketing-site.ref-page .ref-menu-trigger{display:grid}
+ .marketing-site.ref-page .ref-nav{display:none;position:absolute;left:4%;right:4%;top:calc(100% + 3px);padding:18px 20px;border:1px solid #eee2dc;border-radius:17px;background:#fff;box-shadow:0 14px 34px rgba(31,31,31,.10);flex-direction:column;align-items:stretch;gap:8px}
+ .marketing-site.ref-page .ref-nav.is-open{display:flex}
+ .marketing-site.ref-page .ref-nav>a{font-size:14px;padding:8px 6px}
+ .marketing-site.ref-page .ref-nav>a.is-home:after{display:none}
+ .marketing-site.ref-page .ref-nav-mobile-order{display:flex!important;align-items:center;justify-content:space-between;border-radius:24px;background:#5e6551;color:#fff!important;padding:10px 17px!important}
+ .marketing-site.ref-page .ref-hero{height:clamp(460px,56vw,565px)}
+ .marketing-site.ref-page .ref-hero-art{top:80px;right:-13%;width:65%;opacity:.85}
+ .marketing-site.ref-page .ref-hero-copy{top:120px;width:63%}
+ .marketing-site.ref-page .ref-hero h1{font-size:clamp(42px,5.5vw,55px)}
+ .marketing-site.ref-page .ref-features{display:block;padding-block:25px}
+ .marketing-site.ref-page .ref-features-title{margin-bottom:15px}
+ .marketing-site.ref-page .ref-features-grid{gap:10px}
+ .marketing-site.ref-page .ref-catalog{display:block;padding-block:25px}
+ .marketing-site.ref-page .ref-catalog-heading{margin-bottom:18px}
+ .marketing-site.ref-page .ref-catalog-heading h2 br{display:none}
+ .marketing-site.ref-page .ref-catalog-heading p{max-width:390px}
+ .marketing-site.ref-page .ref-catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .marketing-site.ref-page .ref-template-card{max-width:260px;width:100%;justify-self:center}
+ .marketing-site.ref-page .ref-pricing{grid-template-columns:1fr;gap:22px;padding-block:32px}
+ .marketing-site.ref-page .ref-pricing-intro h2 br{display:none}
+ .marketing-site.ref-page .ref-pricing-intro>p{max-width:360px;margin-top:8px}
+ .marketing-site.ref-page .ref-pricing-grid{gap:12px}
+ .marketing-site.ref-page .ref-pricing-card{min-height:235px;padding:17px}
+ .marketing-site.ref-page .ref-addons{padding-top:0}
+ .marketing-site.ref-page .ref-addon-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .marketing-site.ref-page .ref-cta-content{margin-left:45%;width:47%;padding-top:22px}
+ .marketing-site.ref-page .ref-footer{grid-template-columns:1fr auto;row-gap:10px}
+ .marketing-site.ref-page .ref-footer nav{grid-column:1/3;grid-row:2;justify-content:center}
+ .marketing-site.ref-page .ref-footer-end{grid-column:2;grid-row:1}
+}
+@media(max-width:590px){
+ .marketing-site.ref-page .ref-header{height:62px}
+ .marketing-site.ref-page .ref-header.is-scrolled{height:59px}
+ .marketing-site.ref-page .ref-logo img{width:155px;height:auto}
+ .marketing-site.ref-page .ref-order{display:none}
+ .marketing-site.ref-page .ref-header-actions{gap:14px}
+ .marketing-site.ref-page .ref-hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:100px 6% 0;overflow:hidden}
+ .marketing-site.ref-page .ref-hero-copy{position:relative;top:auto;left:auto;width:100%;padding-bottom:13px}
+ .marketing-site.ref-page .ref-hero h1{font-size:clamp(40px,8.9vw,55px);white-space:normal;letter-spacing:-.05em;margin:13px 0}
+ .marketing-site.ref-page .ref-hero h1 br{display:none}
+ .marketing-site.ref-page .ref-hero-copy>p{font-size:13px;max-width:360px}
+ .marketing-site.ref-page .ref-hero-actions{flex-wrap:wrap;gap:8px;margin-top:19px}
+ .marketing-site.ref-page .ref-hero-actions .ref-pill{min-width:auto}
+ .marketing-site.ref-page .ref-hero-actions .ref-pill-dark{padding-inline:19px}
+ .marketing-site.ref-page .ref-social-proof{margin-top:21px}
+ .marketing-site.ref-page .ref-hero-art{position:relative;right:auto;top:auto;align-self:flex-end;width:112%;margin:0 -10% 0 0;opacity:1}
+ .marketing-site.ref-page .ref-features{padding:26px 6%}
+ .marketing-site.ref-page .ref-features-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .marketing-site.ref-page .ref-feature-card{height:139px}
+ .marketing-site.ref-page .ref-feature-card:last-child{grid-column:1/-1;max-width:none}
+ .marketing-site.ref-page .ref-feature-card:last-child p{max-width:none}
+ .marketing-site.ref-page .ref-catalog{padding:25px 6%}
+ .marketing-site.ref-page .ref-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+ .marketing-site.ref-page .ref-catalog-heading h2{font-size:38px}
+ .marketing-site.ref-page .ref-catalog-heading p{font-size:12px}
+ .marketing-site.ref-page .ref-template-card{max-width:none}
+ .marketing-site.ref-page .ref-template-card h3{font-size:13px}
+ .marketing-site.ref-page .ref-template-button{font-size:11px;padding-inline:12px;height:32px}
+ .marketing-site.ref-page .ref-pricing{padding:28px 6%}
+ .marketing-site.ref-page .ref-pricing-intro h2{font-size:34px}
+ .marketing-site.ref-page .ref-pricing-grid{grid-template-columns:1fr}
+ .marketing-site.ref-page .ref-pricing-card{min-height:0;padding:20px}
+ .marketing-site.ref-page .ref-pricing-title h3{font-size:30px}
+ .marketing-site.ref-page .ref-pricing-subtitle,.marketing-site.ref-page .ref-pricing-card li{font-size:12px}
+ .marketing-site.ref-page .ref-pricing-card ul{gap:8px}
+ .marketing-site.ref-page .ref-pricing-bottom strong{font-size:20px}
+ .marketing-site.ref-page .ref-cta{margin-inline:5%;min-height:325px}
+ .marketing-site.ref-page .ref-cta:before{height:165px;width:80%;top:auto;bottom:0;background-size:cover;background-position:left center}
+ .marketing-site.ref-page .ref-cta:after{height:165px;width:35%;top:auto;bottom:0;background-size:cover;background-position:right center}
+ .marketing-site.ref-page .ref-cta-content{width:100%;margin:0;padding:21px 22px;position:relative;z-index:2}
+ .marketing-site.ref-page .ref-cta-content h2{font-size:33px}
+ .marketing-site.ref-page .ref-footer{padding:24px 6%;grid-template-columns:1fr;justify-items:center;text-align:center;gap:19px}
+ .marketing-site.ref-page .ref-footer-logo{align-items:center}
+ .marketing-site.ref-page .ref-footer-logo span{margin:0}
+ .marketing-site.ref-page .ref-footer nav{grid-column:1;grid-row:auto;flex-wrap:wrap;justify-content:center;gap:13px 18px}
+ .marketing-site.ref-page .ref-footer-end{grid-column:1;grid-row:auto;flex-direction:column;gap:8px}
+ .marketing-site.ref-page .ref-copyright{border-left:0;padding:0}
+}
+@media(prefers-reduced-motion:reduce){.marketing-site.ref-page *{scroll-behavior:auto!important;transition:none!important}}

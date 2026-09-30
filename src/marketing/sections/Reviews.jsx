@@ -1,0 +1,3 @@
+import React from 'react'
+import { placeholderReviews } from '../data/siteData'
+export default function Reviews(){return <section className="reviews section"><div className="reviews-head"><div className="section-kicker">06 / REVIEWS</div><h2>Words worth<br/><em>keeping.</em></h2><p>Bagian ini sengaja berisi placeholder. Ganti dengan testimoni asli sebelum website dipublikasikan.</p></div><div className="review-grid">{placeholderReviews.map((r,i)=><blockquote key={r.name}><span>“</span><p>{r.text}</p><footer>{r.name}<small>PLACEHOLDER REVIEW {String(i+1).padStart(2,'0')}</small></footer></blockquote>)}</div></section>}

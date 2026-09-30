@@ -1,0 +1,4 @@
+import React from 'react'
+
+const steps=[['Pilih desain','Cari seri yang paling cocok dari katalog.'],['Kirim data','Lengkapi detail mempelai, acara, foto, musik, dan tamu.'],['Kami susun','Konten disusun ke desain pilihan dan dipersiapkan untuk preview.'],['Review & revisi','Cek hasilnya dan kirim revisi sesuai paket.'],['Share','Undangan siap dibagikan melalui link personal untuk setiap tamu.']]
+export default function Process(){return <section className="process section"><div className="section-kicker">05 / HOW IT WORKS</div><div className="process-wrap"><div className="process-title"><h2>From “pilih desain”<br/>to <em>“siap kirim”.</em></h2><p>Alur dibuat singkat supaya pasangan tidak harus mempelajari sistem yang rumit.</p></div><div className="process-list">{steps.map((s,i)=><article key={s[0]}><span>{String(i+1).padStart(2,'0')}</span><div><h3>{s[0]}</h3><p>{s[1]}</p></div></article>)}</div></div></section>}

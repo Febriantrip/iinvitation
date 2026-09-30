@@ -1,0 +1,33 @@
+{
+  "name": "iinvitation-platform",
+  "private": true,
+  "version": "5.1.0",
+  "type": "module",
+  "workspaces": [
+    "server"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "vite --host 0.0.0.0",
+    "dev:api": "npm run dev --workspace=iinvitation-api",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "check:api": "npm run check --workspace=iinvitation-api"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "lucide-react": "latest",
+    "qrcode": "^1.5.4",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "vite": "latest",
+    "xlsx": "latest"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  }
+}
