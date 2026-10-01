@@ -13,6 +13,12 @@
   <img src="https://img.shields.io/badge/Realtime-SSE-0F766E" alt="Server-Sent Events">
 </p>
 
+## Live demo
+
+**Public marketing site:** https://febriantrip.github.io/iinvitation/
+
+The GitHub Pages deployment hosts the frontend marketing/catalog experience. Backend-dependent routes such as admin, RSVP persistence, guestbook check-in, review workflow, uploads, and MySQL-backed invitation data still require the Node.js API and database runtime.
+
 ## Overview
 
 **Iinvitation** is a full-stack digital invitation platform that combines a public marketing website with an operational backoffice for creating and managing invitation projects.
