@@ -3,8 +3,10 @@ import react from '@vitejs/plugin-react'
 
 const apiPort = Number(process.env.IINVITATION_API_PORT || 8787)
 const apiTarget = `http://127.0.0.1:${apiPort}`
+const isGitHubPages = process.env.GITHUB_PAGES === 'true'
 
 export default defineConfig({
+  base: isGitHubPages ? '/iinvitation/' : '/',
   plugins: [react()],
   server: {
     host: '0.0.0.0',
