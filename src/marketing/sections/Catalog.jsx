@@ -13,6 +13,7 @@ const highlights = [
 ]
 
 export default function Catalog({ onPreview, search, showAll, onShowAll }) {
+  const base = import.meta.env.BASE_URL
   const cards = useMemo(() => {
     const featured = highlights.map(item => ({ ...item, design: catalog.find(d => d.id === item.themeId) || catalog[0] }))
     if (!showAll && !search.trim()) return featured
@@ -27,7 +28,7 @@ export default function Catalog({ onPreview, search, showAll, onShowAll }) {
     <div className="ref-catalog-grid">
       {cards.map(item => <article className="ref-template-card" key={item.design.id}>
         <button className="ref-template-visual" type="button" onClick={() => onPreview(item.design)} aria-label={`Lihat template ${item.label}`}>
-          {item.image ? <img src={`/marketing/template-${item.image}.webp`} alt={`Contoh visual template ${item.label}`} loading="lazy"/> : <InvitationMock design={item.design} compact />}
+          {item.image ? <img src={`${base}marketing/template-${item.image}.webp`} alt={`Contoh visual template ${item.label}`} loading="lazy"/> : <InvitationMock design={item.design} compact />}
         </button>
         <h3>{item.label}</h3>
         <button className="ref-template-button" type="button" onClick={() => onPreview(item.design)}>Lihat Template <ArrowRight size={14}/></button>
