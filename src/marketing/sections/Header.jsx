@@ -11,6 +11,7 @@ const links = [
 ]
 
 export default function Header({ search, onSearch, onShowCatalog }) {
+  const base = import.meta.env.BASE_URL
   const [open, setOpen] = useState(false)
   const [showSearch, setShowSearch] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -37,7 +38,7 @@ export default function Header({ search, onSearch, onShowCatalog }) {
 
   return <header className={`ref-header ${scrolled ? 'is-scrolled' : ''}`}>
     <a className="ref-logo" href="#top" onClick={() => setOpen(false)} aria-label="Iinvitation, ke beranda">
-      <img src="/marketing/brand-reference.png" alt="iinvitation" width="189" height="48" />
+      <img src={`${base}marketing/brand-reference.png`} alt="iinvitation" width="189" height="48" />
     </a>
     <nav className={`ref-nav ${open ? 'is-open' : ''}`} aria-label="Navigasi utama">
       {links.map(([href, title], i) => <a key={href} href={href} onClick={() => setOpen(false)} className={i === 0 ? 'is-home' : ''}>{title}</a>)}
